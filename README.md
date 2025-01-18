@@ -1,6 +1,6 @@
 # Binance Data Fetcher 📊
 
-A Python library to fetch and process trade data from Binance for a specified asset and date. This script downloads the raw data, processes it into a clean CSV format, and manages temporary files efficiently.
+A Python library to fetch and process tick data from Binance for a specified asset and date. This script downloads the data, processes it into a clean CSV format, and return pandas.DataFrame.
 
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue?logo=python)
 ![Requests](https://img.shields.io/badge/Requests-2.x-yellow?logo=python)
@@ -10,7 +10,7 @@ A Python library to fetch and process trade data from Binance for a specified as
 
 ## Features
 
-- 📦 **Download trade data**: Pull historical trade data for any asset supported by Binance.
+- 📦 **Download trade data**: Pull historical tick data for any asset supported by Binance.
 - 🛠️ **Data processing**: Extracts essential columns (`Time`, `Volume`, `Price`, `Asset`) from the raw dataset.
 - 🧹 **File cleanup**: Automatically removes temporary files (ZIP and raw CSV).
 - 🔍 **Reusable function**: A modular function for easy integration into larger Python projects.
@@ -33,7 +33,7 @@ A Python library to fetch and process trade data from Binance for a specified as
 
 ### Example Code
 
-Here’s how you can use the `fetch_and_process_data` function:
+Here’s how you can use the `get_tick_data` function:
 
 ```python
 from fetch_binance_data import get_tick_data
@@ -58,14 +58,12 @@ The columns are:
 
 - `Time`: Timestamp of the trade (in milliseconds since epoch).
 - `Volume`: Quantity of the asset traded.
-- `Price`: Trade price of the asset.
+- `Price`: Trade price of the asset in USDT.
 - `Asset`: Asset symbol (e.g., `BTC`).
 
 ---
 
 ## Directory Structure
-
-The program organizes downloaded and processed files as follows:
 
 ```
 fetch_binance_data/
