@@ -3,7 +3,7 @@ import requests
 import zipfile
 import pandas as pd
 
-def fetch_and_process_data(asset: str, date: str) -> pd.DataFrame:
+def get_tick_data(asset: str, date: str) -> pd.DataFrame:
     """
     Processes the tick CSV for a specific asset and date, and returns the DataFrame
 

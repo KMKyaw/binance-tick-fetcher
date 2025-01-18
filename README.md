@@ -36,10 +36,10 @@ A Python library to fetch and process trade data from Binance for a specified as
 Here’s how you can use the `fetch_and_process_data` function:
 
 ```python
-from fetch_binance_data import fetch_and_process_data
+from fetch_binance_data import get_tick_data
 
 # Fetch and process data for BTCUSDT on January 16, 2025
-df = fetch_and_process_data("BTCUSDT", "25-01-16")
+df = get_tick_data("BTCUSDT", "25-01-16")
 
 # Display the first few rows of the DataFrame
 print(df.head())
@@ -70,8 +70,8 @@ The program organizes downloaded and processed files as follows:
 ```
 fetch_binance_data/
 ├── fetch_binance_data.py   # Main script with the fetch_and_process_data function
-├── downloads/              # Directory for downloaded and processed files
-│   ├── BTCUSDT_processed_25-01-16.csv # Final processed file
+├── downloads/              # Directory for processed files
+│   ├── BTCUSDT_processed_25-01-16.csv # processed csv
 ├── README.md               # Documentation
 ├── requirements.txt        # Dependencies
 └── .gitignore              # Ignored files
